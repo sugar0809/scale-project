@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=2, minimum-scale=1, maximum-scale=1, user-scalable=no">
+
+        <link rel="stylesheet" href="sample/ratchet/ratchet.css">
+
+        <style type="text/css">
+            .hello {
+                margin: 10px;
+            }
+
+            .find {
+                margin: 10px;
+            }
+
+            #pio-setting {
+                display: none;
+            }
+            
+            li.list-item {
+                height:200px;
+            }
+            
+            li.index {
+                background-color: #99cc00;
+            }
+            
+            li.list-divider {
+                font-size: large;
+            }
+            
+            img.check{
+                width:20px;
+                height:20px;
+                
+                float:right;
+                margin-left:10px;
+            }
+            </style>
+
+    </head>
+    <body>
+
+        <div class="content">
+
+            <div class="find">
+                <a id="btn-find" class="button-main button-block find">Find konashi</a>
+            </div>
+
+            <ul id="uart-panel" class="list inset">
+                <li class="list-divider">手順1: ボウルにバターを入れる</li>
+		        <li class="list-item">ボウルにバターを入れてください<img class="check" src="css/images/nocheck.png"></li>
+                <li class="list-divider">手順2: ゴムベラでクリーム状に練り混ぜる</li>
+		        <li class="list-item">ゴムベラでクリーム状になるまで練り混ぜます<img class="check" src="css/images/nocheck.png"></li>
+                <li class="list-divider">手順3: ボウルに砂糖を加える</li>
+                <li class="list-item">ボウルに砂糖を加えてください<img class="check" src="css/images/nocheck.png"></li>
+            </ul>
+
+        </div>
+
+        <!-- for konashijs -->
+        <script src="konashi-bridge.js"></script>
+
+        <!-- for this sample -->
+        <script src="sample/zepto/zepto.min.js"></script>
+        <script src="sample/zepto/touch.js"></script>
+        <script src="sample/ratchet/ratchet.js"></script>
+        <script src="sample/sample-uart.js"></script>
+    </body>
+</html>

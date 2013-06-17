@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=2, minimum-scale=1, maximum-scale=1, user-scalable=no"></meta>
+        <meta http-equiv="Content-Type" content="text/html"; charset="utf-8"></meta>
+            
+            <link rel="stylesheet" href="sample/ratchet/ratchet.css">
+            <link href="css/jquery-ui-1.8.16.custom.css" rel="stylesheet" type="text/css"/>
+            <link href="css/main.css" rel="stylesheet" type="text/css"/>
+                
+                <style type="text/css">
+                    .hello {
+                        margin: 10px;
+                    }
+                    
+                    .find {
+                        margin: 10px;
+                    }
+                    
+                    #pio-setting {
+                        display: none;
+                    }
+                    </style>
+                
+                </head>
+    <body>
+        
+        <div class="content">
+            <audio src="snd/1_C.wav" controls>
+                <p>音声を再生するには、audioタグをサポートしたブラウザが必要です。</p>
+            </audio>
+            <div class="find">
+                <a id="btn-find" class="button-main button-block find">Find konashi</a>
+            </div>
+            
+            Char: <textarea id="uart-rx-text" rows="5" readonly></textarea>
+            <a id="btn-clear-rx" class="button">Clear Console</a>
+
+            
+            <div id="mainbox">
+                
+                <div id = "grabber">
+                </div>
+                
+                <div id="1">
+                    <div id="stepbox" >
+                        <p id="caption">ボウルにバターを入れる</p>
+                        <img id="check1" src="css/images/nocheck.png"></img>
+                        <div id="progress1">
+                            <div class="pbar">
+                                <font id = "scale1" style="margin-right:10px">g</font>
+                                <font id = "fullAmnt1">70</font>
+                                <font id = "currAmnt1">0/</font>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="2">
+                    <div id="stepbox" >
+                        <p id="caption">ゴムベラでクリーム状に練り混ぜる</p>
+                        <img id="check2" src="css/images/nocheck.png"></img>
+                    </div>
+                </div>
+                
+                <div id="3">
+                    <div id="stepbox" >
+                        <p id="caption">ボウルに砂糖を加える</p>
+                        <img id="check3" src="css/images/nocheck.png"></img>
+                        <div id="progress3">
+                            <div class="pbar">
+                                <font id = "scale3" style="margin-right:10px">g</font>
+                                <font id = "fullAmnt3">50</font>
+                                <font id = "currAmnt3">0/</font>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="4">
+                    <div id="stepbox" >
+                        <p id="caption">ボウルにハチミツを加える</p>
+                        <img id="check4" src="css/images/nocheck.png"></img>
+                        <div id="progress4">
+                            <div class="pbar">
+                                <font id = "scale4" style="margin-right:10px">g</font>
+                                <font id = "fullAmnt4">15</font>
+                                <font id = "currAmnt4">0/</font>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="5">
+                    <div id="stepbox" >
+                        <p id="caption">ゴムベラで白っぽくなるまでよくすり混ぜる</p>
+                        <img id="check5" src="css/images/nocheck.png"></img>
+                    </div>
+                </div>
+                
+                <div id="6">
+                    <div id="stepbox" >
+                        <p id="caption">別の容器に卵を溶いて2回に分けて加えてよく混ぜ合わせる</p>
+                        <img id="check6" src="css/images/nocheck.png"></img>
+                    </div>
+                </div>
+                
+                <div id="7">
+                    <div id="stepbox" >
+                        <p id="caption">バニラエッセンスを2滴加える</p>
+                        <img id="check6" src="css/images/nocheck.png"></img>
+                    </div>
+                </div>
+                
+                <div id="8">
+                    <div id="stepbox" >
+                        <p id="caption">ボウルの上にふるいをセットする</p>
+                        <img id="check6" src="css/images/nocheck.png"></img>
+                    </div>
+                </div>
+                
+                <div id="9">
+                    <div id="stepbox" >
+                        <p id="caption">ふるいの中に小麦粉を入れる</p>
+                        <img id="check4" src="css/images/nocheck.png"></img>
+                        <div id="progress4">
+                            <div class="pbar">
+                                <font id = "scale4" style="margin-right:10px">g</font>
+                                <font id = "fullAmnt4">110</font>
+                                <font id = "currAmnt4">0/</font>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="10">
+                    <div id="stepbox" >
+                        <p id="caption">ふるいの中にベーキングパウダーを入れる</p>
+                        <img id="check4" src="css/images/nocheck.png"></img>
+                        <div id="progress4">
+                            <div class="pbar">
+                                <font id = "scale4" style="margin-right:10px">g</font>
+                                <font id = "fullAmnt4">3</font>
+                                <font id = "currAmnt4">0/</font>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="11">
+                    <div id="stepbox" >
+                        <p id="caption">ふるいをふるう</p>
+                        <img id="check6" src="css/images/nocheck.png"></img>
+                    </div>
+                </div>
+                
+                <div id="12">
+                    <div id="stepbox" >
+                        <p id="caption">ゴムベラで切るように混ぜる</p>
+                        <img id="check6" src="css/images/nocheck.png"></img>
+                    </div>
+                </div>
+                
+                <div id="13">
+                    <div id="stepbox" >
+                        <p id="caption">牛乳を加える</p>
+                        <img id="check4" src="css/images/nocheck.png"></img>
+                        <div id="progress4">
+                            <div class="pbar">
+                                <font id = "scale4" style="margin-right:10px">g</font>
+                                <font id = "fullAmnt4">30</font>
+                                <font id = "currAmnt4">0/</font>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="14">
+                    <div id="stepbox" >
+                        <p id="caption">実験終了です</p>
+                        <img id="check4" src="css/images/nocheck.png"></img>
+                    </div>
+                </div>
+                
+            </div>
+            
+        </div>
+        
+        <!-- for konashijs -->
+        <script src="konashi-bridge.js"></script>
+        
+        <!-- for this sample -->
+        <script src="sample/zepto/zepto.min.js"></script>
+        <script src="sample/zepto/touch.js"></script>
+        <script src="sample/ratchet/ratchet.js"></script>
+        <script src="sample/sample-uart.js"></script>
+        
+        <script type="text/javascript">
+            var weight = -1;
+            
+            
+            //animation templete
+            $(document).ready(function(){
+                              $("#menu").click(function(){
+                                               $(this).animate({width:100},{queue:false, duration:600});
+                                               });
+                              });
+            
+            //step
+            var step = 1;
+            window.setInterval(function(){
+                               //test proc
+                               var crrprg = document.getElementById("progress"+step);
+                               var crrv = +(crrprg.getElementsByTagName("div")[0].getElementsByTagName("div")[0].style.width).replace("%","");
+                               setPrgValue(step,crrv+1);
+                               if(crrv >= 99){
+                               colorCheckImage();
+                               step++;
+                               scrolltoStep();
+                               moveGrabber();
+                               }
+                               }, 10);
+            
+            //scroll
+            $(document).ready(function(){
+                              $("#mainbox").click(function(){
+                                                  //scroll to step
+                                                  setPrgValue(2, 50);
+                                                  });
+                              });
+            
+            
+            //conversion scale value to percent
+            function scaleToPercent(scale){
+                var full = +(document.getElementById("fullAmnt"+step).innerText);
+                return (scale/full)*100;
+            }
+            
+            //change check image
+            function colorCheckImage(){
+                document.getElementById("check"+step).src = "css/images/Check.png";
+            }
+            
+            //move grabber for current step
+            function moveGrabber(){
+                var offset = $("#"+step).offset();
+                $("#grabber").animate({top:offset.top, left:offset.left}, "fast");
+            }
+            
+            //go to current step
+            function scrolltoStep(){
+                var stepTop = $("#"+step).offset().top-100;
+                $("html,body").animate({scrollTop:stepTop}, "fast");
+            }
+            
+            //set progressbar value
+            function setPrgValue(step, value){
+                var prgss = $("#progress"+step);
+                prgss.anim_progressbar({"pvalue":value});
+                document.getElementById("currAmnt"+step).innerText = value+"/";
+            };
+            
+            </script>
+        
+        <style>
+            #mainbox{
+                border-width:0px;
+                border-style:solid;
+            }
+            
+            #stepbox{
+                border-width:1px;
+                border-style:solid;
+                
+                padding:20px;
+                width:500px;
+                height:100px;
+            }
+            
+            #stepbox img{
+                width:30px;
+                height:30px;
+                
+                float:right;
+                margin-left:10px;
+            }
+            
+            #stepbox font{
+                float:right;
+                font-size:30px;
+            }
+            
+            #space {
+                margin-right:10px;
+            }
+            
+            #caption{
+                border-width:0px;
+                border-style:solid;
+                
+                font-size:22px;
+                text-align:center;
+            }
+            
+            #grabber {
+                border-width:5px;
+                border-style:solid;
+                border-color:blue;
+                
+                position:absolute;
+                margin-left:auto;
+                
+                padding:20px;
+                width:500px;
+                height:100px
+            }
+            
+            </style>
+        
+        
+        
+    </body>
+</html>
